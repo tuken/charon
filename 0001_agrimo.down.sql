@@ -1,6 +1,12 @@
-DROP TABLE `field_users`;
+DROP TABLE `work_reports`;
 
-DROP TABLE `reports`;
+DROP TABLE `work_types`;
+
+DROP TABLE `crop_varieties`;
+
+DROP TABLE `crop_items`;
+
+DROP TABLE `field_users`;
 
 DROP TABLE `fields`;
 
