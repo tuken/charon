@@ -23,8 +23,10 @@ ALTER TABLE `fields` MODIFY COLUMN `crop` VARCHAR(30) NOT NULL COMMENT '栽培�
 
 ALTER TABLE `fields` MODIFY COLUMN `boundary` GEOMETRY NOT NULL COMMENT '圃場の境界ポリゴン（WKT形式：POLYGON）';
 
+ALTER TABLE `fields` ADD SPATIAL INDEX `idx_fields_boundary` (`boundary`);
+
 ALTER TABLE `users` CHANGE COLUMN `farm_name` `name` VARCHAR(64) DEFAULT NULL COMMENT '法人名';
 
-ALTER `orgs` DROP COLUMN `longitude`;
+ALTER TABLE `orgs` DROP COLUMN `longitude`;
 
-ALTER `orgs` DROP COLUMN `latitude`;
+ALTER TABLE `orgs` DROP COLUMN `latitude`;
