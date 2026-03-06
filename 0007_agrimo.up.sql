@@ -16,7 +16,7 @@ INSERT INTO `field_states` (`id`, `name`, `description`) VALUES
 
 ALTER TABLE `fields` DROP COLUMN `status`;
 
-ALTER TABLE `fields` ADD COLUMN `state` smallint unsigned NOT NULL COMMENT '圃場状態' AFTER `boundary`;
+ALTER TABLE `fields` ADD COLUMN `state` smallint unsigned NOT NULL DEFAULT 1 COMMENT '圃場状態' AFTER `boundary`;
 
 ALTER TABLE `fields` ADD INDEX `idx_fields_state` (`state`);
 
