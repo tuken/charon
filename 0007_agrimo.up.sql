@@ -16,8 +16,8 @@ INSERT INTO `field_states` (`id`, `name`, `description`) VALUES
 
 ALTER TABLE `fields` DROP COLUMN `status`;
 
-ALTER TABLE `fields` ADD COLUMN `state` smallint unsigned NOT NULL DEFAULT 1 COMMENT '圃場状態' AFTER `boundary`;
+ALTER TABLE `fields` ADD COLUMN `field_state_id` smallint unsigned NOT NULL DEFAULT 1 COMMENT '圃場状態' AFTER `boundary`;
 
-ALTER TABLE `fields` ADD INDEX `idx_fields_state` (`state`);
+ALTER TABLE `fields` ADD INDEX `idx_fields_field_state_id` (`field_state_id`);
 
-ALTER TABLE `fields` ADD CONSTRAINT `fk_fields_state` FOREIGN KEY (`state`) REFERENCES `field_states` (`id`);
+ALTER TABLE `fields` ADD CONSTRAINT `fk_fields_field_state_id` FOREIGN KEY (`field_state_id`) REFERENCES `field_states` (`id`);
